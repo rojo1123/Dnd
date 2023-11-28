@@ -1,6 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit"
 
-export type Dice = {name: string, maxValue: number, amount: number, state: RollState, calcFn: (dice: Dice) => number, calcState: (dice: Dice, value: number) => RollState}
+export enum RollTypes { roll, disadvantage, advantage};
+export type Dice = {name: string, maxValue: number, amount: number, state: RollState, rollType: RollTypes}
 export type RollState = 'success' | 'failure' | 'normal';
 
 type DiceState = {
@@ -21,6 +22,12 @@ const calculateRollWithDisadvantage = (dice: Dice) => {
     return Math.max(calculateRoll(dice), calculateRoll(dice))
 }
 
+const calculateRollStrategy = {
+    [RollTypes.roll]: calculateRoll,
+    [RollTypes.advantage]: calculateRollWithAdvantage,
+    [RollTypes.disadvantage]: calculateRollWithDisadvantage,
+}
+
 const calculateRollState = (dice: Dice, value: number): RollState  => {
     if(dice.maxValue === value)
         return 'success'
@@ -32,13 +39,13 @@ const calculateRollState = (dice: Dice, value: number): RollState  => {
 
 const initialState: DiceState = {
     dices: [
-        {name: 'D4', maxValue: 4, amount: 0, state: 'normal', calcFn: calculateRoll, calcState: calculateRollState},
-        {name: 'D6', maxValue: 6, amount: 0, state: 'normal', calcFn: calculateRoll, calcState: calculateRollState},
-        {name: 'D10', maxValue: 10, amount: 0, state: 'normal', calcFn: calculateRoll, calcState: calculateRollState},
-        {name: 'D12', maxValue: 12, amount: 0, state: 'normal', calcFn: calculateRoll, calcState: calculateRollState},
-        {name: 'D20', maxValue: 20, amount: 0, state: 'normal', calcFn: calculateRoll, calcState: calculateRollState},
-        {name: 'D20 advantage', maxValue: 20, amount: 0, state: 'normal', calcFn: calculateRollWithAdvantage, calcState: calculateRollState},
-        {name: 'D20 disadvantage', maxValue: 20, amount: 0, state: 'normal', calcFn: calculateRollWithDisadvantage, calcState: calculateRollState},
+        {name: 'D4', maxValue: 4, amount: 0, state: 'normal', rollType: RollTypes.roll},
+        {name: 'D6', maxValue: 6, amount: 0, state: 'normal',  rollType: RollTypes.roll},
+        {name: 'D10', maxValue: 10, amount: 0, state: 'normal',  rollType: RollTypes.roll },
+        {name: 'D12', maxValue: 12, amount: 0, state: 'normal',  rollType: RollTypes.roll },
+        {name: 'D20', maxValue: 20, amount: 0, state: 'normal',  rollType: RollTypes.roll},
+        {name: 'D20 advantage', maxValue: 20, amount: 0, state: 'normal',  rollType: RollTypes.advantage},
+        {name: 'D20 disadvantage', maxValue: 20, amount: 0, state: 'normal',  rollType: RollTypes.disadvantage},
     ],
     results: [],
     sum: 0,
@@ -58,9 +65,9 @@ const diceSlice = createSlice({
 
             state.dices.forEach(dice => {
                 for(let i = 0; i < dice.amount; i++){
-                    const roll = dice.calcFn(dice);
+                    const roll = calculateRollStrategy[dice.rollType](dice);
                     sum += roll;
-                    state.results.push({dice: {...dice, state: dice.calcState(dice, roll)}, value: roll})
+                    state.results.push({dice: {...dice, state: calculateRollState(dice, roll)}, value: roll})
                 }
             })
 
