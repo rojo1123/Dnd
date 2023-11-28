@@ -1,8 +1,8 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit"
 
 export enum RollTypes { roll, disadvantage, advantage};
+export enum RollState {success = 'success',failure = 'failure',normal='normal'}
 export type Dice = {name: string, maxValue: number, amount: number, state: RollState, rollType: RollTypes}
-export type RollState = 'success' | 'failure' | 'normal';
 
 type DiceState = {
     dices: Dice[],
@@ -30,22 +30,22 @@ const calculateRollStrategy = {
 
 const calculateRollState = (dice: Dice, value: number): RollState  => {
     if(dice.maxValue === value)
-        return 'success'
+        return RollState.success
     if(value === 1)
-        return 'failure'
+        return RollState.failure
 
-    return 'normal';
+    return RollState.normal
 }
 
 const initialState: DiceState = {
     dices: [
-        {name: 'D4', maxValue: 4, amount: 0, state: 'normal', rollType: RollTypes.roll},
-        {name: 'D6', maxValue: 6, amount: 0, state: 'normal',  rollType: RollTypes.roll},
-        {name: 'D10', maxValue: 10, amount: 0, state: 'normal',  rollType: RollTypes.roll },
-        {name: 'D12', maxValue: 12, amount: 0, state: 'normal',  rollType: RollTypes.roll },
-        {name: 'D20', maxValue: 20, amount: 0, state: 'normal',  rollType: RollTypes.roll},
-        {name: 'D20 advantage', maxValue: 20, amount: 0, state: 'normal',  rollType: RollTypes.advantage},
-        {name: 'D20 disadvantage', maxValue: 20, amount: 0, state: 'normal',  rollType: RollTypes.disadvantage},
+        {name: 'D4', maxValue: 4, amount: 0, state: RollState.success, rollType: RollTypes.roll},
+        {name: 'D6', maxValue: 6, amount: 0, state: RollState.success,  rollType: RollTypes.roll},
+        {name: 'D10', maxValue: 10, amount: 0, state: RollState.success,  rollType: RollTypes.roll },
+        {name: 'D12', maxValue: 12, amount: 0, state: RollState.success,  rollType: RollTypes.roll },
+        {name: 'D20', maxValue: 20, amount: 0, state: RollState.success,  rollType: RollTypes.roll},
+        {name: 'D20 advantage', maxValue: 20, amount: 0, state: RollState.success,  rollType: RollTypes.advantage},
+        {name: 'D20 disadvantage', maxValue: 20, amount: 0, state: RollState.success,  rollType: RollTypes.disadvantage},
     ],
     results: [],
     sum: 0,
