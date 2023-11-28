@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit"
 
-export type Dice = {name: string, maxValue: number, amount: number, state: RollState, calcFn: (dice: Dice, ...args: any) => number, calcState: (dice: Dice, value: number) => RollState}
+export type Dice = {name: string, maxValue: number, amount: number, state: RollState, calcFn: (dice: Dice) => number, calcState: (dice: Dice, value: number) => RollState}
 export type RollState = 'success' | 'failure' | 'normal';
 
 type DiceState = {
