@@ -8,6 +8,8 @@ type DiceState = {
     dices: Dice[],
     results: {dice: Dice, value: number}[]
     sum: number;
+    maxDice: number;
+    usedDice: number;
 }
 
 const calculateRoll = (dice: Dice) => {
@@ -19,7 +21,7 @@ const calculateRollWithAdvantage = (dice: Dice) => {
 }
 
 const calculateRollWithDisadvantage = (dice: Dice) => {
-    return Math.max(calculateRoll(dice), calculateRoll(dice))
+    return Math.min(calculateRoll(dice), calculateRoll(dice))
 }
 
 const calculateRollStrategy = {
@@ -37,18 +39,21 @@ const calculateRollState = (dice: Dice, value: number): RollState  => {
     return RollState.normal
 }
 
+const createDice = (name: string, faces: number) => {
+    return {name, maxValue: faces,amount: 0, state: RollState.success, rollType: RollTypes.roll}}
+
 const initialState: DiceState = {
     dices: [
-        {name: 'D4', maxValue: 4, amount: 0, state: RollState.success, rollType: RollTypes.roll},
-        {name: 'D6', maxValue: 6, amount: 0, state: RollState.success,  rollType: RollTypes.roll},
-        {name: 'D10', maxValue: 10, amount: 0, state: RollState.success,  rollType: RollTypes.roll },
-        {name: 'D12', maxValue: 12, amount: 0, state: RollState.success,  rollType: RollTypes.roll },
-        {name: 'D20', maxValue: 20, amount: 0, state: RollState.success,  rollType: RollTypes.roll},
-        {name: 'D20 advantage', maxValue: 20, amount: 0, state: RollState.success,  rollType: RollTypes.advantage},
-        {name: 'D20 disadvantage', maxValue: 20, amount: 0, state: RollState.success,  rollType: RollTypes.disadvantage},
+        createDice('D4', 4),
+        createDice('D6', 6),
+        createDice('D10', 10),
+        createDice('D12', 12),
+        createDice('D20', 20),
     ],
     results: [],
     sum: 0,
+    maxDice: 10,
+    usedDice: 0,
 }
 
 const diceSlice = createSlice({
@@ -57,7 +62,8 @@ const diceSlice = createSlice({
     reducers: {
         updateDice(state, action: PayloadAction<{index: number, amount: number}>){
             const {index, amount} = action.payload;
-            state.dices[index].amount = amount;
+            state.dices[index].amount = Math.min(state.maxDice, Math.max(0, state.dices[index].amount + amount));
+            state.usedDice += amount;
         },
         roll(state){
             let sum = 0;
@@ -72,10 +78,14 @@ const diceSlice = createSlice({
             })
 
             state.sum = sum;
+        },
+        setRollType(state, action: PayloadAction<{index: number, rollType: RollTypes}>){
+            const {index, rollType} = action.payload;
+            state.dices[index].rollType = rollType;
         }
     }
 })
 
 
-export const {updateDice, roll } = diceSlice.actions;
+export const {updateDice, roll, setRollType } = diceSlice.actions;
 export default diceSlice.reducer
