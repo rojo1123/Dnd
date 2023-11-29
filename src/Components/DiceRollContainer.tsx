@@ -3,6 +3,7 @@ import { roll } from "../Redux/dice/dice.slice";
 import { useAppDispatch, useAppSelector } from "../Redux/store";
 import { DicePool } from "./DicePool"
 import { ResultScreen } from "./ResultScreen"
+import { D20Scene } from "./D20Scene";
 
 type ContainerStates = 'all dices' | 'd20'
 
@@ -22,6 +23,7 @@ export const DiceRollContainer = () => {
                 <option value="d20">d20</option>
             </select>
             {diceContent === 'd20' && <div>
+                    <D20Scene/>
                 </div>}
             {diceContent === 'all dices' && <>
                 <DicePool/>

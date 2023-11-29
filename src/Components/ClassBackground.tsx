@@ -51,8 +51,6 @@ function Character({name}: {name: string}) {
 
     if(!Entries[name]) return <></>
 
-    console.log(Entries[name])
-  
     return (
       <mesh ref={mesh} {...Entries[name]}>
         <primitive object={gltf.scene} />
