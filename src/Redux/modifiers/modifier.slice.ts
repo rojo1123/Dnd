@@ -1,20 +1,13 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-
-type Modifier = {name: string, value: number}
+import { ModifierSet } from "./modifier.types";
+import { DefaultClass, setClass } from "../class/class.slice";
 
 interface ModifierState {
-    modifiers: Modifier[]
+    modifiers: ModifierSet
 }
 
 const initialState: ModifierState = {
-    modifiers: [
-        {name: 'strength', value: 10},
-        {name: 'dex', value: 10},
-        {name: 'con', value: 10},
-        {name: 'int', value: 10},
-        {name: 'wis', value: 10},
-        {name: 'cha', value: 10}
-    ]
+    modifiers:  DefaultClass.modifiers
 }
 
 const ModifierSlice = createSlice({
@@ -25,6 +18,11 @@ const ModifierSlice = createSlice({
             const {index, value} = action.payload;
             state.modifiers[index].value = value;
         }
+    },
+    extraReducers: (builder) => {
+        builder.addCase(setClass, (state, action) => {
+            state.modifiers = action.payload.selectedClass.modifiers
+        })
     }
 })
 

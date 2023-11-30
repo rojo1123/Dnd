@@ -1,0 +1,11 @@
+Model Information:
+* title:	Toad The Frog Rogue_T-pose
+* source:	https://sketchfab.com/3d-models/toad-the-frog-rogue-t-pose-1efa73c1646c49ce95b311e8c7f2d845
+* author:	sch0i (https://sketchfab.com/sch0i)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Toad The Frog Rogue_T-pose" (https://sketchfab.com/3d-models/toad-the-frog-rogue-t-pose-1efa73c1646c49ce95b311e8c7f2d845) by sch0i (https://sketchfab.com/sch0i) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

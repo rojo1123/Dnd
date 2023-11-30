@@ -7,10 +7,15 @@ function App() {
   return (
     <div className="App">
       <ClassBackground/>
-      <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', padding: '124px'}}>
-        <CharacterSheet/>
+      <div style={{display: 'grid', gridTemplateColumns: '1fr 2fr 1fr', padding: '124px', height: '100vh'}}>
+        <div style={{display: 'grid', gridTemplateRows: 'auto 1fr'}}>
+          <CharacterSheet/>
+          <div style={{backgroundColor: 'transparent', height: '100%', width: '100%'}}>
+
+          </div>  
+        </div>
         <div/>
-        <div style={{display: 'grid', gridTemplateRows: '1fr auto 1fr', gap: '16px'}}>
+        <div style={{display: 'grid', gridTemplateRows: 'auto auto 40px 60px 40px 1fr', gap: '16px'}}>
           <DiceRollContainer/>
         </div>
       </div>

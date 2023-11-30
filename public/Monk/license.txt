@@ -1,0 +1,11 @@
+Model Information:
+* title:	ARTWAR Fire Monk
+* source:	https://sketchfab.com/3d-models/artwar-fire-monk-af06a44cf70a46edb607c37ff10c651d
+* author:	rustedisaac (https://sketchfab.com/rustedisaac)
+
+Model License:
+* license type:	CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions can not be distributed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "ARTWAR Fire Monk" (https://sketchfab.com/3d-models/artwar-fire-monk-af06a44cf70a46edb607c37ff10c651d) by rustedisaac (https://sketchfab.com/rustedisaac) licensed under CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)

@@ -1,30 +1,36 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { RPGClass } from "./class.types";
-import { Bard, Warlock, Warrior } from "./classes";
+import { Bard, Paladin, Rogue, Warlock, Warrior, Monk } from "./classes";
 
 interface ClassState {
-    selectedClass: RPGClass
+    selectedClass: RPGClass;
     selectedIndex: number;
-    availableClasses: RPGClass[]
+    availableClasses: RPGClass[];
 }
 
+export const DefaultClass = Bard;
+
 const initialState: ClassState = {
-    selectedClass: Bard,
+    selectedClass: DefaultClass,
     selectedIndex: 0,
     availableClasses: [
         Bard,
         Warlock,
-        Warrior
-    ]
+        Warrior,
+        Rogue,
+        Paladin,
+        Monk
+    ],
 }
 
 const classSlice = createSlice({
     name: 'class',
     initialState,
     reducers: {
-        setClass(state, action: PayloadAction<number>){
-            state.selectedIndex = action.payload;
-            state.selectedClass = state.availableClasses[action.payload]
+        setClass(state, action: PayloadAction<{selectedClass: RPGClass, selectedIndex: number}>){
+            const {selectedClass, selectedIndex} = action.payload;
+            state.selectedClass = selectedClass;
+            state.selectedIndex = selectedIndex;
         }
     }
 })

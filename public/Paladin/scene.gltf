@@ -1,0 +1,657 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 61,
+      "max": [
+        57.09086990356445,
+        0.0,
+        57.09086990356445
+      ],
+      "min": [
+        -57.09086990356445,
+        0.0,
+        -57.09086990356445
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 732,
+      "componentType": 5126,
+      "count": 61,
+      "max": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "min": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 61,
+      "max": [
+        1.0,
+        -0.0,
+        2.1016276718910376e-07,
+        1.0
+      ],
+      "min": [
+        1.0,
+        -0.0,
+        -1.6395389934587001e-07,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 61,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 288,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 1464,
+      "componentType": 5126,
+      "count": 10691,
+      "max": [
+        14.427227020263672,
+        85.81507873535156,
+        19.613916397094727
+      ],
+      "min": [
+        -17.952119827270508,
+        -0.24354290962219238,
+        -13.65021800994873
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 129756,
+      "componentType": 5126,
+      "count": 10691,
+      "max": [
+        0.9999584555625916,
+        0.9999708533287048,
+        0.9998789429664612
+      ],
+      "min": [
+        -0.9999332427978516,
+        -0.9999769926071167,
+        -0.9998754858970642
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 976,
+      "componentType": 5126,
+      "count": 10691,
+      "max": [
+        0.9998038411140442,
+        0.999744713306427,
+        0.9998841285705566,
+        1.0
+      ],
+      "min": [
+        -0.9995746612548828,
+        -0.9997280240058899,
+        -0.9999740123748779,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 488,
+      "componentType": 5126,
+      "count": 10691,
+      "max": [
+        0.9950109720230103,
+        0.9937630295753479
+      ],
+      "min": [
+        0.0048779998905956745,
+        0.0048779998905956745
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 1152,
+      "componentType": 5125,
+      "count": 49866,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 258048,
+      "componentType": 5126,
+      "count": 643,
+      "max": [
+        2.2416458129882813,
+        41.158023834228516,
+        38.04098892211914
+      ],
+      "min": [
+        -22.30580711364746,
+        32.77599334716797,
+        8.669622421264648
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 265764,
+      "componentType": 5126,
+      "count": 643,
+      "max": [
+        0.9970176219940186,
+        0.9999039173126221,
+        0.9952093958854675
+      ],
+      "min": [
+        -0.9964652061462402,
+        -0.9993724226951599,
+        -0.9969103336334229
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 172032,
+      "componentType": 5126,
+      "count": 643,
+      "max": [
+        0.9976056814193726,
+        0.9999182820320129,
+        0.9958920478820801,
+        1.0
+      ],
+      "min": [
+        -0.9999751448631287,
+        -0.9953929781913757,
+        -0.9989120960235596,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 86016,
+      "componentType": 5126,
+      "count": 643,
+      "max": [
+        0.9969329833984375,
+        0.42662400007247925
+      ],
+      "min": [
+        0.0024389999452978373,
+        0.0024319998919963837
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 200616,
+      "componentType": 5125,
+      "count": 2412,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 273480,
+      "componentType": 5126,
+      "count": 1293,
+      "max": [
+        14.970038414001465,
+        48.09480285644531,
+        -0.8051998615264893
+      ],
+      "min": [
+        9.573782920837402,
+        35.29880905151367,
+        -28.408634185791016
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 288996,
+      "componentType": 5126,
+      "count": 1293,
+      "max": [
+        0.9956461191177368,
+        0.9943386912345886,
+        0.9701728820800781
+      ],
+      "min": [
+        -0.9958597421646118,
+        -0.9744045734405518,
+        -0.9619021415710449
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 182320,
+      "componentType": 5126,
+      "count": 1293,
+      "max": [
+        0.9975307583808899,
+        0.9939121007919312,
+        0.99920654296875,
+        1.0
+      ],
+      "min": [
+        -0.9975303411483765,
+        -0.9614576697349548,
+        -0.9880303740501404,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 91160,
+      "componentType": 5126,
+      "count": 1293,
+      "max": [
+        0.9875869750976563,
+        0.41338399052619934
+      ],
+      "min": [
+        0.190202996134758,
+        0.0024419999681413174
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 210264,
+      "componentType": 5125,
+      "count": 1968,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "david.campuzano (https://sketchfab.com/david.campuzano)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/stylized-knight-martin-60c73a2c2bf64b97855a6a95d54d69db",
+      "title": "Stylized Knight - Martín"
+    },
+    "generator": "Sketchfab-14.42.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 218136,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 101504,
+      "byteOffset": 218136,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 304512,
+      "byteOffset": 319640,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 203008,
+      "byteOffset": 624152,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 827160,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/floor_mat_baseColor.png"
+    },
+    {
+      "uri": "textures/floor_mat_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/floor_mat_normal.png"
+    },
+    {
+      "uri": "textures/Merc_mat_baseColor.png"
+    },
+    {
+      "uri": "textures/Merc_mat_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/Merc_mat_normal.png"
+    },
+    {
+      "uri": "textures/Weapons_mat_baseColor.png"
+    },
+    {
+      "uri": "textures/Weapons_mat_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/Weapons_mat_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "name": "floor_mat",
+      "normalTexture": {
+        "index": 2
+      },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.5958113396155111,
+          0.5958113396155111,
+          0.5958113396155111,
+          1.0
+        ],
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Merc_mat",
+      "normalTexture": {
+        "index": 5
+      },
+      "occlusionTexture": {
+        "index": 4
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 3
+        },
+        "metallicRoughnessTexture": {
+          "index": 4
+        }
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Weapons_mat",
+      "normalTexture": {
+        "index": 8
+      },
+      "occlusionTexture": {
+        "index": 7
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 6
+        },
+        "metallicRoughnessTexture": {
+          "index": 7
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Floor_floor_mat_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Mercenary_Merc_mat_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 6,
+            "POSITION": 5,
+            "TANGENT": 7,
+            "TEXCOORD_0": 8
+          },
+          "indices": 9,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Crossbow_Weapons_mat_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 11,
+            "POSITION": 10,
+            "TANGENT": 12,
+            "TEXCOORD_0": 13
+          },
+          "indices": 14,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Sword_Weapons_mat_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 16,
+            "POSITION": 15,
+            "TANGENT": 17,
+            "TEXCOORD_0": 18
+          },
+          "indices": 19,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.009999999776482582,
+        0.0,
+        0.0,
+        -0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "b9d3ee1313f6428c9e9ab7a8d19f941f.fbx"
+    },
+    {
+      "children": [
+        3,
+        5,
+        7,
+        9
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "name": "Floor"
+    },
+    {
+      "mesh": 0,
+      "name": "Floor_floor_mat_0"
+    },
+    {
+      "children": [
+        6
+      ],
+      "name": "Mercenary"
+    },
+    {
+      "mesh": 1,
+      "name": "Mercenary_Merc_mat_0"
+    },
+    {
+      "children": [
+        8
+      ],
+      "name": "Crossbow"
+    },
+    {
+      "mesh": 2,
+      "name": "Crossbow_Weapons_mat_0"
+    },
+    {
+      "children": [
+        10
+      ],
+      "name": "Sword"
+    },
+    {
+      "mesh": 3,
+      "name": "Sword_Weapons_mat_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    },
+    {
+      "sampler": 0,
+      "source": 3
+    },
+    {
+      "sampler": 0,
+      "source": 4
+    },
+    {
+      "sampler": 0,
+      "source": 5
+    },
+    {
+      "sampler": 0,
+      "source": 6
+    },
+    {
+      "sampler": 0,
+      "source": 7
+    },
+    {
+      "sampler": 0,
+      "source": 8
+    }
+  ]
+}

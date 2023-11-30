@@ -6,28 +6,29 @@ export type Dice = {name: string, maxValue: number, amount: number, state: RollS
 
 type DiceState = {
     dices: Dice[],
-    results: {dice: Dice, value: number}[]
+    results: {dice: Dice, value: number, total: number, modifier: number[], extraRolls: number[]}[],
+    rollType: RollTypes;
     sum: number;
     maxDice: number;
     usedDice: number;
 }
 
-const calculateRoll = (dice: Dice) => {
-    return Math.floor(Math.random() * dice.maxValue) + 1;
-}
-
-const calculateRollWithAdvantage = (dice: Dice) => {
-    return Math.max(calculateRoll(dice), calculateRoll(dice))
-}
-
-const calculateRollWithDisadvantage = (dice: Dice) => {
-    return Math.min(calculateRoll(dice), calculateRoll(dice))
-}
-
-const calculateRollStrategy = {
-    [RollTypes.roll]: calculateRoll,
-    [RollTypes.advantage]: calculateRollWithAdvantage,
-    [RollTypes.disadvantage]: calculateRollWithDisadvantage,
+const calculateRoll = (dice: Dice, rollState: RollTypes): {roll: number, extraRolls: number[]} => {
+    switch(rollState){
+        case RollTypes.advantage:{
+            const roll1 = Math.floor(Math.random() * dice.maxValue) + 1;
+            const roll2 = Math.floor(Math.random() * dice.maxValue) + 1;
+            return {roll: Math.max(roll1, roll2), extraRolls: [Math.min(roll1, roll2)]};
+        }
+        case RollTypes.disadvantage:{
+            const roll1 = Math.floor(Math.random() * dice.maxValue) + 1;
+            const roll2 = Math.floor(Math.random() * dice.maxValue) + 1;
+            return {roll: Math.min(roll1, roll2), extraRolls: [Math.max(roll1, roll2)]};
+        }
+        default: {
+            return {roll: Math.floor(Math.random() * dice.maxValue) + 1, extraRolls: []}
+        }
+    }
 }
 
 const calculateRollState = (dice: Dice, value: number): RollState  => {
@@ -51,6 +52,7 @@ const initialState: DiceState = {
         createDice('D20', 20),
     ],
     results: [],
+    rollType: RollTypes.roll,
     sum: 0,
     maxDice: 10,
     usedDice: 0,
@@ -65,23 +67,29 @@ const diceSlice = createSlice({
             state.dices[index].amount = Math.min(state.maxDice, Math.max(0, state.dices[index].amount + amount));
             state.usedDice += amount;
         },
-        roll(state){
+        roll(state, action: PayloadAction<{modifier: number}>){
             let sum = 0;
             state.results = [];
+            const {modifier} = action.payload;
 
             state.dices.forEach(dice => {
                 for(let i = 0; i < dice.amount; i++){
-                    const roll = calculateRollStrategy[dice.rollType](dice);
-                    sum += roll;
-                    state.results.push({dice: {...dice, state: calculateRollState(dice, roll)}, value: roll})
+                    const {roll, extraRolls} = calculateRoll(dice, state.rollType);
+                    const total = roll + modifier
+                    sum += total;
+                    state.results.push({dice: {...dice, state: calculateRollState(dice, roll)}, value: roll, total, extraRolls, modifier: [modifier]})
                 }
             })
 
             state.sum = sum;
         },
-        setRollType(state, action: PayloadAction<{index: number, rollType: RollTypes}>){
-            const {index, rollType} = action.payload;
-            state.dices[index].rollType = rollType;
+        setRollType(state, action: PayloadAction<{rollType: RollTypes}>){
+            const {rollType} = action.payload;
+            if(state.rollType === rollType) {
+                state.rollType = RollTypes.roll;
+                return
+            }
+            state.rollType = rollType;
         }
     }
 })
