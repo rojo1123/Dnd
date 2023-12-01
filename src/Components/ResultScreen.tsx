@@ -1,7 +1,5 @@
 import { useAppSelector } from "../Redux/store"
 
-
-
 export const ResultScreen = () => {
     const results = useAppSelector(state => state.dice.results)
 
@@ -11,10 +9,10 @@ export const ResultScreen = () => {
           <p>{dice.name}</p>
           <div style={{display: 'flex', gap:'2px'}}>
             <p className={dice.state}>{value}</p>
-            {extraRolls.length > 0 && <p>{extraRolls.join(', ')}</p>}
-            <p>({modifier.join(', ')})</p>
+            {extraRolls.length > 0 && <p>- {extraRolls.join(', ')}</p>}
+            {modifier.length > 0 && <p>({modifier.join(', ')})</p>}
           </div>
-          <h4>{total}</h4>
+          <h4>{total}</h4>  
         </div>
       })}
     </div>)

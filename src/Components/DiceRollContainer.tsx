@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { RollTypes, roll, setRollType } from "../Redux/dice/dice.slice";
+import { roll, setRollType } from "../Redux/dice/dice.slice";
 import { useAppDispatch, useAppSelector } from "../Redux/store";
 import { DicePool } from "./DicePool"
 import { ResultScreen } from "./ResultScreen"
 import { D20Scene } from "./D20Scene";
 import { Skill, availableSkillList, skillList } from "../Redux/modifiers/modifier.types";
 import { CalculateModifier } from "../Redux/modifiers/modifier.utils";
+import { RollTypes } from "../Redux/dice/dice.types";
 
 type ContainerStates = 'all dices' | 'd20'
 
@@ -21,8 +22,11 @@ export const DiceRollContainer = () => {
         {name: 'no Skill', modifier: undefined},
         ...availableSkillList, 
         {name: 'Attack', modifier: attackModifier},
-        {name: 'Cast Spell', modifier: spellModifier},
     ]
+
+    if(spellModifier){
+        options.push({name: 'Cast Spell', modifier: spellModifier});
+    }
         
     const [selectedSkill, setSelectedSkill] = useState<Skill>(options[0]);
       

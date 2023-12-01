@@ -4,6 +4,7 @@ export const Rogue: RPGClass = {
     name: 'Rogue',
     color: 'DarkCyan',
     attackModifier: 'dexterity',
+    spellModifier: 'inteligence',
     modifiers: [
         {name: 'strength', value: 10},
         {name: 'dexterity', value: 16},
@@ -18,6 +19,7 @@ export const Monk: RPGClass = {
     name: 'Monk',
     color: 'LightBlue',
     attackModifier: 'wisdow',
+    spellModifier: 'wisdow',
     modifiers: [
         {name: 'strength', value: 18},
         {name: 'dexterity', value: 12},
@@ -32,6 +34,7 @@ export const Paladin: RPGClass = {
     name: 'Paladin',
     color: 'DarkOrange',
     attackModifier: 'dexterity',
+    spellModifier: 'wisdow',
     modifiers: [
         {name: 'strength', value: 12},
         {name: 'dexterity', value: 8},
